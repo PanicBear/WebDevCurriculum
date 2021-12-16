@@ -1,20 +1,99 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<!-- TODO: 또 무엇이 필요할까요? -->
-	</head>
-	<body>
-		<header>
-			<!-- TODO: 어디까지를 header로 보는 것이 좋을까요? -->
-		</header>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <header>
+      <h1>Naver</h1>
+      <input type="text" placeholder="검색어를 입력하세요" />
+    </header>
 
-		<section class="main">
-			<!-- TODO: main은 어떤 식으로 나눌 수 있을까요? -->
-		</section>
+    <section class="main">
+      <div class="panel">
+        <div class="panel-row">
+          <div class="panel-item1">뉴스판</div>
+          <div class="panel-item2">경제지표판</div>
+          <div class="panel-item3">연예판</div>
+          <div class="panel-item4">트렌드판</div>
+        </div>
+        <div class="panel-row">
+          <div class="panel-item1">메일</div>
+          <div class="panel-item2">카페</div>
+          <div class="panel-item3">블로그</div>
+          <div class="panel-item4">더보기</div>
+        </div>
+      </div>
 
-		<footer>
-			<!-- TODO: 하단의 여러 가지 링크들은 어떻게 처리하면 좋을까요? -->
-		</footer>
-	</body>
+      <div class="weather-bar">
+        <div class="weather-conainer">
+          <img src="" alt="weather-icon" />
+          <div class="weather-text_wrapper">
+            <div class="weather-today">10도 맑음</div>
+            <div class="weather-yesterday">어제보다 2도 높아요</div>
+          </div>
+        </div>
+        <div class="ad"></div>
+      </div>
+
+      <div class="weather-detail">
+        <div class="weather-header">
+          <b>날씨</b>
+          <p class="location">서울시 잠실동</p>
+          <button class="btn_deail"></button>
+        </div>
+        <div class="weather-category">
+          <button>시간대별 날씨</button>
+          <button>시간대별 미세먼지</button>
+          <button>주간 날씨</button>
+          <button>주간 미세먼지</button>
+        </div>
+      </div>
+
+      <div class="covid_bar">
+        <div class="covid-current">
+          <div class="covid-current_title">코로나19</div>
+          <div class="covid-current_describe">국내외 확진 현황</div>
+        </div>
+        <div class="covid-fact_check">
+          <div class="covid-current_title">코로나19 팩트체크</div>
+          <div class="covid-current_describe">백신 정보 팩트는?</div>
+        </div>
+      </div>
+
+      <div class="anniversary-bar">제102주년 대한민국 임시정부 수립일</div>
+
+      <div class="application-bar">
+        앱으로 <b>새로운 네이버</b>를 더 쾌적하게 사용해보세요
+      </div>
+
+      <div class="webtoon-bar">
+        웹툰
+        <button class="detail"></button>
+      </div>
+
+      <div class="pan">
+        인기 주제 판을 확인해 보세요!
+        <div class="row">
+          <div class="item1">영화판</div>
+          <div class="item2">뿜판</div>
+        <div class="row">
+          <div class="item1">웹툰판</div>
+          <div class="item2">경제M판</div>
+        </div>
+      </div>
+
+			<div class="notice">네이버앱 업데이트 사전 안내</div>
+    </section>
+
+    <footer>
+      <div class="item1">로그인</div>
+			<div class="item2">전체서비스</div>
+			<div class="item3">PC버전</div>
+			<div class="item4">이용약관</div>
+			<div class="item5"><b>개인정보처리방침</b></div>
+			<div class="item6">고객센터</div>
+			<img src="" alt="footer_logo">
+    </footer>
+  </body>
 </html>
