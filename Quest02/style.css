@@ -1,0 +1,248 @@
+:root {
+  --ever-green: #00c864;
+}
+
+body {
+  width: 40em;
+  height: min-content;
+  min-height: 100vh;
+  margin: auto;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(226, 241, 241, 1) 63%,
+    rgba(225, 226, 226, 1) 100%
+  );
+}
+
+h1 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+header {
+  text-align: center;
+}
+
+header > h1 {
+  color: var(--ever-green);
+  font-size: 2.5em;
+}
+
+header > input {
+  width: 100%;
+  height: 3em;
+  border: 1px solid var(--ever-green);
+  box-sizing: border-box;
+  padding: 1em;
+  margin: 1em 0;
+}
+
+.title {
+  font-size: 1.25em;
+  padding-right: 0.5em;
+}
+
+.item {
+  flex: 1;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  width: 24em;
+  height: 12em;
+  margin: auto;
+  padding-bottom: 10em;
+}
+
+.panel-row {
+  display: flex;
+  flex: 1;
+  width: 100%;
+}
+
+[class^="panel-item"] {
+  text-align: center;
+}
+
+.panel-item_icon {
+  width: 4em;
+  height: 4em;
+  background-color: aliceblue;
+  border-radius: 33%;
+  margin: auto;
+}
+
+.panel-item_text {
+  font-size: 0.75em;
+  color: grey;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: min-content;
+  background-color: white;
+  padding: 1em;
+  margin-bottom: 0.5em;
+  box-sizing: border-box;
+  border-radius: 0.5em;
+}
+
+.accordion {
+  width: 2em;
+  background-color: white;
+  border: 0;
+}
+.accordion > .fa-chevron-down {
+}
+
+.hide {
+  display: none;
+}
+
+.weather-bar {
+  justify-content: space-between;
+}
+.weather-container {
+  flex: 3;
+  display: flex;
+  flex-direction: row;
+}
+.weather-icon_wrapper {
+  height: 100%;
+  font-size: 2em;
+  color: cornflowerblue;
+}
+.weather-text_wrapper {
+  padding-left: 0.5em;
+}
+.onair {
+  flex: 1;
+}
+.onair-title {
+  color: red;
+}
+.onair-text {
+  font-weight: bold;
+}
+
+.weather-detail {
+  display: flex;
+  flex-direction: column;
+}
+.weather-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.weather-header_text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.weather-header_text > p {
+  color: grey;
+}
+
+.covid_bar > div {
+  flex: 1;
+}
+
+.covid_bar > div:nth-child(2) {
+  padding-left: 1em;
+  border-left: 1px solid lightgray;
+}
+
+.anniversary-bar > p {
+  flex: 1;
+  text-align: center;
+}
+
+.application-bar {
+  align-items: center;
+  box-sizing: border-box;
+}
+.application-bar > button {
+  color: cornflowerblue;
+  height: 2.5em;
+  background-color: white;
+  border: 1px solid cornflowerblue;
+  border-radius: 0.25em;
+}
+
+.pan {
+  display: flex;
+  flex-direction: column;
+}
+.pan-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 1em;
+}
+.pan-header > button {
+  color: grey;
+  background-color: white;
+  border: 0;
+}
+.pan-item_container {
+  display: flex;
+  flex-direction: column;
+}
+.pan-item_container .row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.pan-item_container .row .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: aliceblue;
+  height: 2em;
+  margin: 0.125em;
+  padding: 0 0.5em;
+}
+
+.pan-item_container .row .item > button {
+  background-color: aliceblue;
+  border: 0;
+}
+
+footer {
+  margin: 3em 0;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.footer-container .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.footer-container .row div {
+  color: gray;
+  padding: 0 0.5em;
+}
+
+.footer-container .row > div:nth-child(n + 2) {
+  border-left: 1px solid lightgray;
+}
+.footer-container .logo {
+  color: lightslategray;
+  margin-top: 1em;
+}

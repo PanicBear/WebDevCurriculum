@@ -1,48 +1,89 @@
-<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+      defer
+    />
+    <link rel="stylesheet" href="../../Quest02/style.css" />
   </head>
   <body>
     <header>
-      <h1>Naver</h1>
-      <input type="text" placeholder="검색어를 입력하세요" />
+      <h1>NAVER</h1>
+      <input type="search" placeholder="검색어를 입력하세요" />
     </header>
 
     <section class="main">
       <div class="panel">
         <div class="panel-row">
-          <div class="panel-item1">뉴스판</div>
-          <div class="panel-item2">경제지표판</div>
-          <div class="panel-item3">연예판</div>
-          <div class="panel-item4">트렌드판</div>
+          <div class="panel-item1 item">
+            <div class="panel-item_icon"></div>
+            <p class="panel-item_text">뉴스판</p>
+          </div>
+          <div class="panel-item2 item">
+            <div class="panel-item_icon"></div>
+            <p class="panel-item_text">경제지표판</p>
+          </div>
+          <div class="panel-item3 item">
+            <div class="panel-item_icon"></div>
+            <p class="panel-item_text">연예판</p>
+          </div>
+          <div class="panel-item4 item">
+            <div class="panel-item_icon"></div>
+            <p class="panel-item_text">트렌드판</p>
+          </div>
         </div>
         <div class="panel-row">
-          <div class="panel-item1">메일</div>
-          <div class="panel-item2">카페</div>
-          <div class="panel-item3">블로그</div>
-          <div class="panel-item4">더보기</div>
+          <div class="panel-item1 item">
+            <div class="panel-item_icon"></div>
+            <p class="panel-item_text">메일</p>
+          </div>
+          <div class="panel-item2 item">
+            <div class="panel-item_icon"></div>
+            <p class="panel-item_text">카페</p>
+          </div>
+          <div class="panel-item3 item">
+            <div class="panel-item_icon"></div>
+            <p class="panel-item_text">블로그</p>
+          </div>
+          <div class="panel-item4 item">
+            <div class="panel-item_icon"></div>
+            <p class="panel-item_text"></p>
+          </div>
         </div>
       </div>
 
-      <div class="weather-bar">
-        <div class="weather-conainer">
-          <img src="" alt="weather-icon" />
+      <div class="weather-bar content">
+        <div class="weather-container">
+          <div class="weather-icon_wrapper">
+            <i class="fas fa-moon"></i>
+          </div>
           <div class="weather-text_wrapper">
-            <div class="weather-today">10도 맑음</div>
+            <b class="weather-today">10도 맑음</b>
             <div class="weather-yesterday">어제보다 2도 높아요</div>
           </div>
         </div>
-        <div class="ad"></div>
+        <div class="onair">
+          <b class="onair-title">NOW.</b>
+          <div class="onair-text">지금 방송중</div>
+        </div>
       </div>
 
-      <div class="weather-detail">
+      <div class="weather-detail content">
         <div class="weather-header">
-          <b>날씨</b>
-          <p class="location">서울시 잠실동</p>
-          <button class="btn_deail"></button>
+          <div class="weather-header_text">
+            <b class="title">날씨</b>
+            <p class="location">서울시 잠실동</p>
+            <i class="far fa-compass"></i>
+          </div>
+          <button class="accordion">
+            <i class="fas fa-chevron-down"></i>
+          </button>
         </div>
-        <div class="weather-category">
+        <div class="weather-category hide">
           <button>시간대별 날씨</button>
           <button>시간대별 미세먼지</button>
           <button>주간 날씨</button>
@@ -50,50 +91,87 @@
         </div>
       </div>
 
-      <div class="covid_bar">
+      <div class="covid_bar content">
         <div class="covid-current">
-          <div class="covid-current_title">코로나19</div>
+          <b class="covid-current_title">코로나19</b>
           <div class="covid-current_describe">국내외 확진 현황</div>
         </div>
         <div class="covid-fact_check">
-          <div class="covid-current_title">코로나19 팩트체크</div>
+          <b class="covid-current_title">코로나19 팩트체크</b>
           <div class="covid-current_describe">백신 정보 팩트는?</div>
         </div>
       </div>
 
-      <div class="anniversary-bar">제102주년 대한민국 임시정부 수립일</div>
-
-      <div class="application-bar">
-        앱으로 <b>새로운 네이버</b>를 더 쾌적하게 사용해보세요
+      <div class="anniversary-bar content">
+        <p>제102주년 <b>대한민국 임시정부 수립일</b></p>
       </div>
 
-      <div class="webtoon-bar">
-        웹툰
-        <button class="detail"></button>
+      <div class="application-bar content">
+        <p>앱으로 <b>새로운 네이버</b>를 더 쾌적하게 사용해보세요</p>
+        <button>앱 사용하기</button>
       </div>
 
-      <div class="pan">
-        인기 주제 판을 확인해 보세요!
-        <div class="row">
-          <div class="item1">영화판</div>
-          <div class="item2">뿜판</div>
-        <div class="row">
-          <div class="item1">웹툰판</div>
-          <div class="item2">경제M판</div>
+      <div class="webtoon-bar content">
+        <b class="title">웹툰</b>
+        <button class="accordion">
+          <i class="fas fa-chevron-down"></i>
+        </button>
+      </div>
+
+      <div class="pan content">
+        <div class="pan-header">
+          <b class="title">인기 주제 판을 확인해 보세요!</b>
+          <button>판관리</button>
+        </div>
+        <div class="pan-item_container">
+          <div class="row">
+            <div class="item1 item">
+              <p>영화판</p>
+              <button>
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+            <div class="item2 item">
+              <p>뿜판</p>
+              <button>
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="item1 item">
+              <p>웹툰판</p>
+              <button>
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+            <div class="item2 item">
+              <p>경제M판</p>
+              <button>
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
-			<div class="notice">네이버앱 업데이트 사전 안내</div>
+      <div class="notice content">네이버앱 업데이트 사전 안내</div>
     </section>
 
     <footer>
-      <div class="item1">로그인</div>
-			<div class="item2">전체서비스</div>
-			<div class="item3">PC버전</div>
-			<div class="item4">이용약관</div>
-			<div class="item5"><b>개인정보처리방침</b></div>
-			<div class="item6">고객센터</div>
-			<img src="" alt="footer_logo">
+      <div class="footer-container">
+        <div class="row">
+          <div class="item1">로그인</div>
+          <div class="item2">전체서비스</div>
+          <div class="item3">PC버전</div>
+        </div>
+        <div class="row">
+          <div class="item4">이용약관</div>
+          <div class="item5"><b>개인정보처리방침</b></div>
+          <div class="item6">고객센터</div>
+        </div>
+        <b class="logo">NAVER</b>
+      </div>
     </footer>
   </body>
 </html>
