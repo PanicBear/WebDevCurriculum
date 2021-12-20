@@ -1,6 +1,9 @@
 * {
   margin: 0;
 }
+.far {
+  font-size: 4em;
+}
 .desktop {
   width: 48em;
   height: 48em;
@@ -17,21 +20,26 @@
 .file {
   width: 4em;
   height: 4em;
+  text-align: center;
   box-sizing: border-box;
-  border: 1px solid black;
   border-radius: 50%;
   list-style: none;
 }
 .folder {
-  background-color: bisque;
 }
 .icon {
-  background-color: aqua;
 }
 .dragged {
   position: absolute;
 }
 .onDrag {
-  background-color: black;
-  border: 1px solid gray;
+  color: gray;
+}
+.ghost {
+  color: transparent;
+  position: absolute;
+  border: 0;
+}
+.win {
+  font-size: 16em;
 }
