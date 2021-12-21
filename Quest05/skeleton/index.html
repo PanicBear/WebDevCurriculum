@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<link rel="stylesheet" href="/style.css">
-		<script src="/notepad.js"></script>
-	</head>
-	<body>
-		<!-- TODO: 이 곳을 채워 클라이언트를 만들어 보세요 -->
-		<script>
-			let notepad = new Notepad();
-		</script>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="notepad.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+      defer
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="root">
+      <section class="explorer">
+        <div class="explorer-header add-file">
+          Add New File <i class="fas fa-plus add-file"></i>
+        </div>
+        <ul class="file-list"></ul>
+      </section>
+      <section class="editor">
+        <div class="file-wrapper">
+          <div class="file-header"></div>
+          <div class="file-content"></div>
+        </div>
+      </section>
+    </div>
+  </body>
 </html>
