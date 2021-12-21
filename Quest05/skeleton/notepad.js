@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 class Notepad {
   #notepad;
   #explorer;
+  #editor = document.querySelector(".editor");
   #file;
   #onEditList = {};
   constructor(target, explorer, file) {
@@ -24,23 +25,33 @@ class Notepad {
       if (target.classList.contains("add-file")) {
         this.#explorer.addFile();
       } else if (target.classList.contains("delete-file")) {
-        this.#explorer.removeFile(e.target.parentElement.parentElement.innerText);
+        this.#explorer.removeFile(
+          e.target.parentElement.parentElement.innerText
+        );
       }
     });
     this.#notepad.addEventListener("dblclick", (e) => {
+      e.preventDefault();
       const target = e.target;
-      console.log(target);
       if (target.classList.contains("item-text")) {
-        const file = JSON.parse(localStorage.getItem("files"))[
-          target.textContent
-        ];
-        if (!this.#onEditList[target.textContent]) {
-          this.#onEditList[file.name] = file;
-        }
+        const file = this.#explorer.openFile(target.textContent);
+        this.#editor.insertAdjacentHTML(
+          "beforeend",
+          `<div class="file">
+          <div class="file-header">
+            <div class="file-header_text">
+              ${file.name}
+            </div>
+            <div class="file-header_button">
+              <i class="fas fa-times close-file"></i>
+            </div>
+          </div>
+          <textarea class="file-content">${file.content}</textarea>
+        </div>`
+        );
       }
     });
   };
-  #deleteFile = () => {};
 }
 
 class Explorer {
@@ -55,6 +66,10 @@ class Explorer {
     this.#storage.getItem("files") ??
       this.#storage.setItem("files", JSON.stringify({}));
     this.#onChange();
+  };
+  openFile = (name) => {
+    const files = JSON.parse(this.#storage.getItem("files"));
+    return files[name];
   };
   addFile = () => {
     const files = JSON.parse(this.#storage.getItem("files"));

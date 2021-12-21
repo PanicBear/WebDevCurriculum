@@ -28,20 +28,22 @@
 }
 .file-item {
   display: flex;
-  padding: 0 0.5em;
 }
 .item-text {
   flex: 7;
+  padding-left: 0.5em;
   line-height: 2em;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  user-select: none;
 }
 .item-button {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-right: 0.5em;
 }
 .item-button > i {
   font-size: 1em;
@@ -60,13 +62,25 @@
   box-sizing: border-box;
 }
 .file-header {
+  display: flex;
   text-align: center;
   height: 2em;
+  line-height: 2em;
   border-left: 1px solid black;
   border-bottom: 1px solid black;
   box-sizing: border-box;
 }
+.file-header_text{
+  flex: 1;
+  text-align: center;
+}
+.file-header_button{
+  padding: 0 0.5em;
+}
 .file-content {
   flex: 1;
+  border: 0;
   border-left: 1px solid black;
+  outline-width: 0;
+  padding: 1em;
 }
