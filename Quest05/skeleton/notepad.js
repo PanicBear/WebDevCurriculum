@@ -23,28 +23,24 @@ class Notepad {
       const target = e.target;
       if (target.classList.contains("add-file")) {
         this.#explorer.addFile();
-      } else if (target.classList.contains("edit-file")) {
-        this.#editFile();
       } else if (target.classList.contains("delete-file")) {
-        this.#deleteFile();
+        this.#explorer.removeFile(e.target.parentElement.parentElement.innerText);
       }
     });
     this.#notepad.addEventListener("dblclick", (e) => {
       const target = e.target;
+      console.log(target);
       if (target.classList.contains("item-text")) {
-        const file = localStorage.getItem("files")[target.textContent];
-        if (this.#onEditList[target.textContent]) {
+        const file = JSON.parse(localStorage.getItem("files"))[
+          target.textContent
+        ];
+        if (!this.#onEditList[target.textContent]) {
           this.#onEditList[file.name] = file;
         }
       }
     });
   };
-  #editFile = () => {
-    console.log("edit file");
-  };
-  #deleteFile = () => {
-    console.log("delete file");
-  };
+  #deleteFile = () => {};
 }
 
 class Explorer {
@@ -69,6 +65,13 @@ class Explorer {
       this.#onChange();
     }
   };
+  removeFile = (fileName) => {
+    const files = JSON.parse(this.#storage.getItem("files"));
+    delete files[fileName];
+    console.log(fileName);
+    this.#storage.setItem("files", JSON.stringify(files));
+    this.#onChange();
+  };
   #onChange = () => {
     console.log("onchange");
     const files = JSON.parse(this.#storage.getItem("files"));
@@ -77,7 +80,6 @@ class Explorer {
         `<li class="file-item">
 		<div class="item-text">${fileName}</div>
 		<div class="item-button">
-			<i class="far fa-edit edit-file"></i>
 			<i class="far fa-trash-alt delete-file"></i>
 		</div>
 	</li>`
