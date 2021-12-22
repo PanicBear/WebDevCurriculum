@@ -4,13 +4,8 @@ import File from "./file.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const explorer = new Explorer(document.querySelector(".file-list"));
-  const editor = new Editor(document.querySelector(".editor"));
-  const notepad = new Notepad(
-    document.querySelector("#root"),
-    explorer,
-    editor,
-    File
-  );
+  const editor = new Editor(document.querySelector(".editor"), explorer);
+  new Notepad(document.querySelector("#root"), explorer, editor, File);
 });
 
 class Notepad {
@@ -18,7 +13,6 @@ class Notepad {
   #explorer;
   #editor;
   #File;
-  #openedTab = {};
   constructor(target, explorer, editor, File) {
     this.#notepad = target;
     this.#explorer = explorer;
@@ -43,10 +37,7 @@ class Notepad {
         const file = new this.#File(
           this.#explorer.readFile(target.textContent)
         );
-        if (this.#openedTab[file.getName()] === undefined) {
-          this.#editor.addTab(file);
-          this.#openedTab[file.getName()] = file;
-        }
+        this.#editor.addTab(file);
       }
     });
   };

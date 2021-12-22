@@ -1,7 +1,7 @@
 class File {
   #name;
   #content;
-  #onEdit = false;
+  #onEdit = "";
   constructor({ name, content }) {
     this.#name = name;
     this.#content = content;
@@ -9,8 +9,8 @@ class File {
   getName = () => this.#name;
   getContent = () => this.#content;
   isEditing = (isEditing) => (this.#onEdit = isEditing);
-  isSaved = () => this.#onEdit;
-  changeContent = (content) => (this.#content = content);
+  getEditedContent = () => this.#onEdit;
+  setContent = (content) => (this.#content = content);
   getSavedState = () => ({ name: this.#name, content: this.#content });
 }
 export default File;

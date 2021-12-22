@@ -70,11 +70,11 @@
   border-bottom: 1px solid black;
   box-sizing: border-box;
 }
-.file-header_text{
+.file-header_text {
   flex: 1;
   text-align: center;
 }
-.file-header_button{
+.file-header_button {
   padding: 0 0.5em;
 }
 .file-content {

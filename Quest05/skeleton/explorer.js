@@ -34,6 +34,13 @@ class Explorer {
       this.#onChange();
     }
   };
+  updateFile = ({ name, content }) => {
+    const files = JSON.parse(this.#storage.getItem("files"));
+    console.log(content);
+    files[name].content = content;
+    console.log(files[name]);
+    this.#storage.setItem("files", JSON.stringify(files));
+  };
   readFile = (name) => JSON.parse(this.#storage.getItem("files"))[name];
   deleteFile = (fileName) => {
     const files = JSON.parse(this.#storage.getItem("files"));
